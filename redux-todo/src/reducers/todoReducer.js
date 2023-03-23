@@ -23,6 +23,13 @@ const todoReducer = (state = initialData, action) => {
         list: newList,
       };
 
+      // remove all
+
+      case "REMOVE_ALL":
+        return {
+          ...state,
+          list: []
+        }
     default:
       return state;
   }

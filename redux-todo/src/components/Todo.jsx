@@ -31,14 +31,43 @@ function Todo() {
         <div className="showItems">
           {list.map((elem) => {
             return (
-              <div className="eachItem" key={elem.id}>
-                <h3>{elem.data}</h3>
-                <button onClick={() => dispatch(deleteTodo(elem.id))}>
-                  <AiTwotoneDelete />
-                </button>
+              <div
+                className="eachItem"
+                key={elem.id}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  paddingTop: "5px",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                  }}
+                >
+                  <h3>{elem.data}</h3>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <button
+                    onClick={() => dispatch(deleteTodo(elem.id))}
+                    style={{ marginLeft: "10px" }}
+                  >
+                    <AiTwotoneDelete />
+                  </button>
+                </div>
               </div>
             );
           })}
+        </div>
+
+        {/* remove all items button */}
+        <div> 
+            <button onClick={() => dispatch(removeAll())}><span>Remove All</span></button>
         </div>
       </div>
     </div>
