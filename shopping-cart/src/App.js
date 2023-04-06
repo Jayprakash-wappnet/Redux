@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
      <Cart/>
-     <div className="products d-flex flex-wrap">
+     <div className="products d-flex flex-wrap justify-content-around">
         {products.map((product) => (
           <Product {...product} />
         ))}
